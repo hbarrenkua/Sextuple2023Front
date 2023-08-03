@@ -1,0 +1,27 @@
+<mat-form-field>
+    <mat-label>Jornada</mat-label>
+    <mat-select #jornada placeholder="Seleccione la jornada" >
+        <mat-option *ngFor="let jornada of pruebas" [value]="jornada.Numero">
+            {{jornada.nombre}}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<br>
+<button mat-raised-button
+        color="primary" 
+        (click)="descarga()">
+    Descargar jornada
+</button>
+
+<button mat-raised-button
+        color="primary" 
+        (click)="descargaPodiums()">
+    Descargar podiums
+</button>
+
+<button mat-raised-button
+        color="primary" 
+        (click)="descargaClasificacionGeneral()">
+    Descargar clasificacion general
+</button>

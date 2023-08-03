@@ -1,0 +1,113 @@
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  .cdk-drop-list-dragging .mat-row:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  .mat-column-orden {
+      min-width: 5rem;
+      max-width: 5rem;
+      font-weight:bold;
+      text-align:center;
+    }
+    .mat-column-nombreGuia {
+      min-width: 19rem;
+      max-width: 19rem;
+      max-height: 23px !important;
+      overflow:hidden !important;
+    }
+    .mat-column-nombre {
+      min-width: 8rem;
+      max-width: 8rem;
+      max-height: 23px !important;
+      overflow:hidden !important;
+      
+    }
+    .mat-column-duracion {
+      min-width: 6rem;
+      max-width: 6rem;
+      
+    }
+    .mat-column-hora {
+      min-width: 6rem;
+      max-width: 6rem;
+      
+    }
+    .alturaXS{
+      background-color:rgba(225, 180, 135, 0.89);
+  }
+  .alturaT{
+    background-color:rgba(225, 180, 135, 0.89);
+}
+.alturaM{
+      background:rgba(184, 225, 135, 0.809);;
+  }
+  .alturaL{
+      background-color:rgba(135, 225, 202, 0.809);;
+  }
+  .alturaS{
+      background-color:rgba(190, 135, 225, 0.809);;
+  }
+  .alturaX{
+      background-color:rgba(225, 135, 135, 0.809);;
+  }
+  .alturaPRET{
+    background-color:rgba(135, 225, 148, 0.89);
+}
+.alturaPRES{
+  background-color:rgba(225, 135, 220, 0.89);
+}
+
+  .row-is-clicked{
+    background-color:rgba(217, 223, 91, 0.878);;
+  
+  }
+  
+    tr.altonormal {
+    height: 55px !important;
+  }
+  
+
+  tr.alto90 {
+    height: 45px !important;
+  }
+  tr.alto75 {
+    height: 37px !important;
+  }
+  tr.alto60 {
+    height: 30px !important;
+  }
+  
+  tr.altoseparacion {
+    height: 900px !important;
+  }
+
+  tr.alto90CA{
+    height: 195px !important;
+
+  }
+  tr.alto75CA{
+    height: 187px !important;
+
+  }
+  tr.alto60CA{
+    height: 165px !important;
+
+  }
+
+  ::ng-deep .mat-tooltip {
+    font-size: 20px !important;
+  }

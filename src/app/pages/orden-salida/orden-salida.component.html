@@ -1,0 +1,57 @@
+<div>
+    <h1>Orden de salida</h1>
+    <mat-form-field>
+        <mat-label>Jornada</mat-label>
+        <mat-select #jornada placeholder="Seleccione la jornada" >
+            <mat-option *ngFor="let jornada of pruebas" [value]="jornada.Numero">
+                {{jornada.nombre}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Turno</mat-label>
+        <mat-select #turno placeholder="Seleccione el turno" >
+            <mat-option *ngFor="let turno of turnos" [value]="turno">
+                Turno {{turno}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Hora</mat-label>
+        <input  matInput type="time"  [(ngModel)]="hora">
+      </mat-form-field>
+
+    <mat-divider></mat-divider>
+</div>
+
+
+<div fxLayout="row">
+     
+    <div fxFlex="25"
+         *ngFor="let horario of horarios;let i=index">
+         <h2>Pista {{ horario.NumeroPista }} {{ horario.nombre }} </h2>
+        <div fxLayout="column" 
+             *ngFor="let altura of horario.alturas">
+                <app-bloque-personas (resaltaMismoGuia)="resalta($event)" (ordenCambiado)="reordenar($event)" [altura]="altura"></app-bloque-personas>
+        </div>
+    </div>
+</div>
+<div>
+    <div>
+        <button type="button" 
+                        mat-raised-button
+                        color="primary" 
+                        (click)="guardarOrden()" >
+                    Guardar
+                </button>
+                <button type="button" 
+                mat-raised-button
+                color="primary" 
+                (click)="guardarOrdenManga()" >
+            Guardar solo esta manga
+        </button>
+
+
+            </div>

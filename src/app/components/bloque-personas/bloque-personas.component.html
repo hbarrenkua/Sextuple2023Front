@@ -1,0 +1,85 @@
+<div fxLayout="row">
+    <div fxFlex="5"
+         fxLayoutAlign="center center"
+         [class]="getClaseCSS(altura.altura!)">
+        {{altura.altura}}
+    </div>
+    <div fxFlex="95">
+<table mat-table
+cdkDropList
+(cdkDropListDropped)="onListDrop($event)"
+[dataSource]="altura.perros" 
+class="mat-elevation-z8">
+<ng-container matColumnDef="orden" 
+>
+<td mat-cell 
+*matCellDef="let perro"> 
+{{perro.orden }}
+</td>
+</ng-container>
+<ng-container matColumnDef="nombreGuia" 
+>
+<td mat-cell 
+*matCellDef="let perro"
+[matTooltip]="perro.ayuda"> 
+<div class="mat-column-nombreGuia">
+    {{perro.nombreGuia }}
+    
+</div>
+
+</td>
+</ng-container>
+<ng-container matColumnDef="nombre" 
+>
+<td mat-cell 
+*matCellDef="let perro"> 
+<div class="mat-column-nombre">
+    {{perro.nombre }}
+</div>
+</td>
+</ng-container>
+<ng-container matColumnDef="duracion" 
+>
+<td mat-cell 
+*matCellDef="let perro"> 
+{{perro.duracion |horasMinutosSegundos }}
+
+</td>
+
+</ng-container>
+<ng-container matColumnDef="hora" 
+>
+<td mat-cell 
+*matCellDef="let perro"> 
+{{perro.hora | horasMinutosSegundos}}
+
+</td>
+
+</ng-container>
+<ng-container matColumnDef="prev" 
+>
+<td mat-cell 
+*matCellDef="let perro"> 
+{{perro.prev?.orden }}
+</td>
+</ng-container>
+<ng-container matColumnDef="next" 
+>
+<td mat-cell 
+*matCellDef="let perro"> 
+{{perro.next?.orden }}
+</td>
+</ng-container>
+<tr mat-row 
+cdkDrag 
+*matRowDef="let row; columns: displayedColumns;"
+[style]="resaltar(row)"
+(mousedown)="resalta(row,true)"
+(mouseup)="resalta(row,false)"
+[class.row-is-clicked]="row.resaltado"
+[appRowHeight]="row.tiempo"
+>
+</tr>
+</table>
+</div>
+</div>

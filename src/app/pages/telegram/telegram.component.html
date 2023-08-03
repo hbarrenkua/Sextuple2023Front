@@ -1,0 +1,44 @@
+<div>
+    <h1>Mensajes telegram</h1>
+    <mat-form-field>
+        <mat-label>Jornada</mat-label>
+        <mat-select #jornada placeholder="Seleccione la jornada" >
+            <mat-option *ngFor="let jornada of pruebas" [value]="jornada.Numero">
+                {{jornada.nombre}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Turno</mat-label>
+        <mat-select #turno placeholder="Seleccione el turno" >
+            <mat-option *ngFor="let turno of turnos" [value]="turno">
+                Turno {{turno}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-divider></mat-divider>
+    <br>
+</div>
+
+<mat-card>
+
+    <mat-card-content >
+        <span [innerHTML]="ultimoMensaje?.mensaje"> </span>
+    </mat-card-content>
+</mat-card>
+
+<button mat-raised-button
+        color="primary" 
+        [disabled]="mensajeriaArrancada"
+        (click)="iniciarMensajeria()">
+    Arrancar Mensajes telegram
+</button>
+
+
+<button mat-raised-button
+        [disabled]="!mensajeriaArrancada"
+        color="primary" 
+        (click)="detenerMensajeria()">
+    Detener Mensajes telegram
+</button>

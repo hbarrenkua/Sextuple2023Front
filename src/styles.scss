@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+
+html {
+    box-sizing: border-box; /* con esto se consigue que el padding no afecte al tamaño del elemento*/
+    font-size: 62.5%; /* 1rem = 10px*/
+  }
+
+  
+*,*:before, *:after{
+    box-sizing: inherit;
+  }
+  
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
